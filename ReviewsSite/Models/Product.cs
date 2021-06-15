@@ -2,14 +2,24 @@
 
 public class Product
 {
-	public Product()
+
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Image { get; set; }
+    //Category - Leaving out as per Davis (SABOTAGE!)
+    //Review - Second sprint
+    public string Description { get; set; }
+
+    public Product(int id, string name, string image)
 	{
-
-        public int Id        //Name
-        //Image
-        //Category
-        //Review
-        //And whatever other things you’d like to include. Some ideas: Date or Description
-
+        Id = id;
+        Name = name;
+        Image = image;
     }
+
+    public void SetDescription(string description)
+    {
+        Description = description;
+    }
+
 }
