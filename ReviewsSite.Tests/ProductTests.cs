@@ -1,4 +1,5 @@
 using System;
+using ReviewsSite.Models;
 using Xunit;
 
 namespace ReviewsSite.Tests
