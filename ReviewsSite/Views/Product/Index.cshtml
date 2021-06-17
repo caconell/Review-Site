@@ -1,24 +1,23 @@
 ﻿@model IEnumerable<ReviewsSite.Models.Product>
 
-@{
-    Layout = null;
-}
-<!DOCTYPE html>
+    @{
+        Layout = null;
+    }
+    <!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Product</title>
-</head>
-<body>
-    <h1>Products List</h1>
-    <hr />
-    <ul>
-        @foreach (var product in Model)
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Product</title>
+    </head>
+    <body>
+        <h1>Products List</h1>
+        <hr />
+        <ul>
+            @foreach (var product in Model)
             {
                 <li><a href="/Product/Details/@product.Id">@product.Name</a></li>
             }
-    </ul>
-
-</body>
+        </ul>
+    </body>
 </html>
