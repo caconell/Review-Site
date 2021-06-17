@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ReviewsSite.Models;
 using ReviewsSite.Repositories;
 using System;
 
@@ -10,21 +11,21 @@ namespace ReviewsSite.Controllers
 	public class ProductController : Controller
 	{
 
-		public ProductRepository repo;
-		public ProductController()
+		public IRepository<Product> productRepo;
+		public ProductController(IRepository<Product> productRepo)
 		{
-			repo = new ProductRepository();
+			this.productRepo = productRepo;
 		}
 
 		public ViewResult Index()
 		{
-			return View(repo.GetAll());
+			return View(productRepo.GetAll());
 
 		}
 
 		public ViewResult Details(int id)
         {
-			return View(repo.GetByID(id));
+			return View(productRepo.GetByID(id));
         }
 
 

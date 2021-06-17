@@ -9,32 +9,24 @@ namespace ReviewsSite.Repositories
     public class ProductRepository : IRepository<Product>
         
     {
-        public List<Product> productList;
+        public TacoContext db;
+        
 
-        public ProductRepository()
+        public ProductRepository(TacoContext db)
         {
-            productList = new List<Product>()
-            {
-                new Product(1, "Shrimp Tacos", "/images/spicy-shrimp-tacos.jpg"),
-                new Product(2, "Keto Tacos", "/images/Keto-Tacos.jpg" ),
-                new Product(3, "Ground Beef Tacos", "/images/ground-beef-tacos-3.jpg" ),
-                new Product(4, "Carnitas Tacos", "/images/carnitas.jpg" ),
-                new Product(5, "Chicken Tacos", "/images/instant-pot-shredded-chicken-tacos-5.jpg" ),
-                new Product(6, "Fish Tacos", "/images/fish-taco.jpg" ),
-                new Product(7, "Veggie Tacos", "/images/Vegetarian-Tacos-3.jpg" )
-            };
+            this.db = db;
         
         
         }
 
             public IEnumerable<Product> GetAll()
             {
-                return productList;
+                return db.Products.ToList();
             }
 
             public Product GetByID(int id)
             {
-                return productList.Where(p => p.Id == id).FirstOrDefault();
+                return db.Products.Where(p => p.Id == id).FirstOrDefault();
             }
         
 

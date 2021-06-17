@@ -10,7 +10,7 @@ namespace ReviewsSite
     public class TacoContext : DbContext
     {
         public DbSet<Product> Products { get; set; }
-        //public DbSet<Reviews> Reviews { get; set; }
+        public DbSet<Review> Reviews { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             string connectionString = "Server=(localdb)\\mssqllocaldb; Database=ReviewsitesDB_062021; Trusted_Connection=True";
@@ -33,6 +33,9 @@ namespace ReviewsSite
                 new Product(7, "Veggie Tacos", "/images/Vegetarian-Tacos-3.jpg")
                 );
 
+            modelBuilder.Entity<Review>().HasData(
+               new Review(1, 6, "userreviewer", "this tacos great")
+               );
         }
     }
 }
