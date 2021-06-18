@@ -1,0 +1,18 @@
+﻿@model IEnumerable<ReviewsSite.Models.Product>
+
+@{
+    ViewBag.Title = "Product List";
+}
+@section styles{
+    <link rel="stylesheet" href="" />
+}
+
+
+<h1>Products List</h1>
+<hr />
+<ul>
+    @foreach (var product in Model)
+    {
+        <li><a href="/Product/Details/@product.Id">@product.Name</a></li>
+    }
+</ul>

@@ -1,0 +1,21 @@
+﻿@model ReviewsSite.Models.Product 
+@{ 
+    ViewBag.Title = "Product Details - " + Model.Name;
+}
+
+    <h1>Product Details</h1>
+    <hr />
+    <h4> Product ID: @Model.Id</h4>
+    <h4>Product Name: @Model.Name</h4>
+    <img src="@Model.Image" alt="Photo of @Model.Name" style="width:300px" />
+    <hr />
+    <h4>Taco Reviews</h4>
+    @foreach (var Review in Model.Reviews)
+    {
+        <p>@Review.Content</p>
+        <p>- @Review.Reviewername</p>
+    }
+@if (Model.Reviews.Count == 0)
+            {
+                <p>No reviews for this product yet!</p>
+            }
