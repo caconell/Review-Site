@@ -34,7 +34,7 @@ namespace ReviewsSite
                 );
 
             modelBuilder.Entity<Review>().HasData(
-               new Review(1, 6, "userreviewer", "this tacos great")
+               new Review(1, 1, "userreviewer", "this tacos great")
                );
         }
     }

@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReviewsSite;
 
 namespace ReviewsSite.Migrations
 {
     [DbContext(typeof(TacoContext))]
-    partial class TacoContextModelSnapshot : ModelSnapshot
+    [Migration("20210618154455_againagain061821")]
+    partial class againagain061821
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -110,7 +112,7 @@ namespace ReviewsSite.Migrations
                         {
                             Id = 1,
                             Content = "this tacos great",
-                            ProductId = 1,
+                            ProductId = 6,
                             Reviewername = "userreviewer"
                         });
                 });
