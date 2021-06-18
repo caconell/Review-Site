@@ -16,6 +16,17 @@ namespace ReviewsSite.Controllers
             this.reviewRepo = reviewRepo;   
         }
 
+        public ViewResult Index()
+        {
+            return View(reviewRepo.GetAll());
+
+        }
+
+        public ViewResult Details(int id)
+        {
+            return View(reviewRepo.GetByID(id));
+        }
+
     }
 
 }

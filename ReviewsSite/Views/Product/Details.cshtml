@@ -1,18 +1,14 @@
 ﻿@model ReviewsSite.Models.Product 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Productsdetal</title>
-    <meta name="viewport" content="width=device-width" />
-</head>
 
-<body>
     <h1>Product Details</h1>
     <hr />
     <h4> Product ID: @Model.Id</h4>
     <h4>Product Name: @Model.Name</h4>
     <img src="@Model.Image" alt="Photo of @Model.Name" />
-</body>
-</html>
+    <hr />
+    <h4>Taco Reviews</h4>
+    @foreach (var Review in Model.Reviews)
+    {
+        <p>@Review.Content</p>
+    }

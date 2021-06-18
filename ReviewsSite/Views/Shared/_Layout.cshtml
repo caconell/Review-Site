@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="" />
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <div>
+        <h1>BEST TACOS FOR TACO TUESDAY</h1>
+        <nav>
+            <ul>
+                <li><a href="/Product/">Product List</a></li>
+                </ul>
+        </nav>
+        <hr />
+        @RenderBody()
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
