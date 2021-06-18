@@ -9,8 +9,8 @@ using ReviewsSite;
 namespace ReviewsSite.Migrations
 {
     [DbContext(typeof(TacoContext))]
-    [Migration("20210618154455_againagain061821")]
-    partial class againagain061821
+    [Migration("20210618173019_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -112,7 +112,7 @@ namespace ReviewsSite.Migrations
                         {
                             Id = 1,
                             Content = "this tacos great",
-                            ProductId = 6,
+                            ProductId = 1,
                             Reviewername = "userreviewer"
                         });
                 });
