@@ -19,7 +19,19 @@ namespace ReviewsSite.Repositories
         
         }
 
-            public IEnumerable<Product> GetAll()
+        public void Create(Product obj)
+        {
+            db.Products.Add(obj);
+            db.SaveChanges();
+        }
+
+        public void Delete(Product obj)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public IEnumerable<Product> GetAll()
             {
                 return db.Products.ToList();
             }
@@ -28,7 +40,19 @@ namespace ReviewsSite.Repositories
             {
                 return db.Products.Where(p => p.Id == id).FirstOrDefault();
             }
-        
+
+        //public Product SearchById(string id)
+        //{
+        //    return new Product();
+        //    //return db.Products.Where(s => s. == id).FirstOrDefault();
+        //}
+
+        public void Update(Product obj)
+        {
+            db.Products.Update(obj);
+            db.SaveChanges();
+        }
+
 
     }
 }

@@ -22,6 +22,10 @@ namespace ReviewsSite.Models
 
 
         }
+
+        public Review()
+        {
+        }
     }
    
 }

@@ -22,5 +22,24 @@ namespace ReviewsSite.Repositories
         {
             return db.Reviews.Where(r => r.Id == id).FirstOrDefault();
         }
+
+        public void Create(Review obj)
+        {
+            db.Reviews.Add(obj);
+            db.SaveChanges();
+        }
+
+        public void Update(Review obj)
+        {
+            db.Reviews.Update(obj);
+            db.SaveChanges();
+        }
+    
+        public void Delete(Review obj)
+        {
+            db.Reviews.Remove(obj);
+            db.SaveChanges();
+        }
+
     }
 }
