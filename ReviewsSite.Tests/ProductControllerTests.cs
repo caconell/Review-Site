@@ -26,11 +26,11 @@ namespace ReviewsSite.Tests
             //Arrange
 
             //Act
-            Product product = productRepo.GetbyId(id);
+            //Product product = productRepo.GetbyId(id);
 
 
             //Assert
-            Assert.Equal("")
+           // Assert.Equal("");
 
         }
 
