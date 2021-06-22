@@ -27,9 +27,11 @@ namespace ReviewsSite.Controllers
             return View(reviewRepo.GetByID(id));
         }
 
-        public IActionResult Create()
+        public IActionResult Create(int id)//product id
         {
-            return View(new Review());
+            Product ProductToReview = reviewRepo.GetProductById(id);
+            ViewBag.Product = ProductToReview;
+            return View(new Review() { ProductId = id });
         }
 
         [HttpPost]

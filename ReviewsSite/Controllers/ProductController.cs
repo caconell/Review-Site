@@ -43,7 +43,17 @@ namespace ReviewsSite.Controllers
 			return View(product);
 		}
 
+		[HttpPost]
+		public IActionResult Update(Product model)
+        {
+			productRepo.Update(model);
+			return RedirectToAction("Index");
+        }
 
+		public ViewResult Details(int id)
+        {
+			return View(productRepo.GetByID(id));
+        }
 
 
 

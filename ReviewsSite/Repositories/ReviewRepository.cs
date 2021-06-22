@@ -41,5 +41,9 @@ namespace ReviewsSite.Repositories
             db.SaveChanges();
         }
 
+        public Product GetProductById(int id)
+        {
+            return db.Products.Find(id);
+        }
     }
 }

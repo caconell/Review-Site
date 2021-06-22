@@ -10,7 +10,7 @@
 <ul>
     @foreach (var product in Model)
     {
-        <li><a href="/Review/Details/@product.Id">@product.Name</a>- <a href="/Product/Update/@product.Id"><button>Edit</button></a></li>
+        <li><a href="/Product/Details/@product.Id">@product.Name</a>- <a href="/Product/Update/@product.Id"><button>Edit</button></a></li>
     }
 </ul>
 
