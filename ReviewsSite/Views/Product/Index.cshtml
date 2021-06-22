@@ -1,18 +1,16 @@
 ﻿@model IEnumerable<ReviewsSite.Models.Product>
 
-@{
-    ViewBag.Title = "Product List";
-}
 @section styles{
     <link rel="stylesheet" href="" />
 }
 
-
-<h1>Products List</h1>
+<h2>Product List</h2>
+<a href="/Product/Create">Add New Product</a>
 <hr />
 <ul>
     @foreach (var product in Model)
     {
-        <li><a href="/Product/Details/@product.Id">@product.Name</a></li>
+        <li><a href="/Product/Details/@product.Id">@product.Name</a>- <a href="/Product/Update/@product.Id"><button>Edit</button></a></li>
     }
 </ul>
+

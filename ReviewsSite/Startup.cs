@@ -29,7 +29,7 @@ namespace ReviewsSite
             services.AddMvc();
             services.AddDbContext<TacoContext>();
             services.AddScoped<IRepository<Product>, ProductRepository>();
-            //services.AddScoped<IRepository<Review>, ReviewRepository>();
+            services.AddScoped<IRepository<Review>, ReviewRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

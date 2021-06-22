@@ -23,12 +23,37 @@ namespace ReviewsSite.Controllers
 
 		}
 
+		public ViewResult Create()
+        {
+				
+				return View(new Product());			
+
+		}
+
+		[HttpPost]
+		public IActionResult Create(Product model)
+		{
+			productRepo.Create(model);
+			return RedirectToAction("Update", new { id = model.Id });
+		}
+
+		public IActionResult Update(int id)
+		{
+			Product product = productRepo.GetByID(id);
+			return View(product);
+		}
+
+		[HttpPost]
+		public IActionResult Update(Product model)
+        {
+			productRepo.Update(model);
+			return RedirectToAction("Index");
+        }
+
 		public ViewResult Details(int id)
         {
 			return View(productRepo.GetByID(id));
         }
-
-
 
 
 
