@@ -39,7 +39,7 @@ namespace ReviewsSite.Controllers
         public ActionResult Create(Review review)
         {
             reviewRepo.Create(review);
-            return RedirectToAction("Update", new { id = review.Id });
+            return RedirectToAction("Details", new { id = review.Id });
 
         }
 
@@ -54,7 +54,8 @@ namespace ReviewsSite.Controllers
         {
             reviewRepo.Update(review);
             ViewBag.ResultMessage = "Review Updated.";
-            return View(review);
+            return RedirectToAction("Details", new { id = review.Id });
+            //return View(review);
         }
 
         public IActionResult Delete(int id)
