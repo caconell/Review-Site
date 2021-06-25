@@ -9,6 +9,7 @@ namespace ReviewsSite.Tests
     public class ProductControllerTests
 
     {
+
     
           [Fact]
             public void Index_Returns_A_View()
