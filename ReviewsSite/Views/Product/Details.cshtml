@@ -1,24 +1,26 @@
-﻿@model ReviewsSite.Models.Product 
-@{ 
+﻿@model ReviewsSite.Models.Product
+@{
     ViewBag.Title = "Product Details - " + Model.Name;
 }
 
-    <h1>Review Details</h1>
-    <hr />
-    <h4> Product ID: @Model.Id</h4>
-    <h4>Product Name: @Model.Name</h4>
-    <h4>Product Description: @Model.Description</h4>
-    <img src="@Model.Image" alt="Photo of @Model.Name" style="width:300px" />
-    <hr />
-    <h4>Taco Reviews</h4>
-    @foreach (var Review in Model.Reviews)
-    {
-        <p>@Review.Content</p>
-        <p>- @Review.Reviewername</p>
-    }
-@if (Model.Reviews.Count == 0)
-            {
-                <p>No reviews for this product yet!</p>
-            }
+<h1>@Model.Name</h1>
+<hr />
+<h4>Product Description: @Model.Description</h4>
+<img src="@Model.Image" alt="Photo of @Model.Name" style="width:300px" />
+<hr />
+<h4>Taco Reviews</h4>
+<a href="/Review/Create/@Model.Id"><button>Add a Review</button></a>
+@foreach (var Review in Model.Reviews)
+{
+    <p>@Review.Content</p>
+    <p>- @Review.Reviewername</p>
 
-<a href="/Review/Create/@Model.Id">Add a Review</a>
+
+    <a href="/Review/Update/@Review.Id"><button>Edit Review</button></a>
+    <a href="/Review/Delete/@Review.Id"><button>Delete Review</button></a>
+
+}
+@if (Model.Reviews.Count == 0)
+{
+    <p>No reviews for this product yet!</p>
+}

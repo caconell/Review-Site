@@ -38,6 +38,7 @@ namespace ReviewsSite.Controllers
 
         public ActionResult Create(Review review)
         {
+            review.ReviewDate = DateTime.Now;
             reviewRepo.Create(review);
             return RedirectToAction("Details", new { id = review.Id });
 

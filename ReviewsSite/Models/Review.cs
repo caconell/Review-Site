@@ -12,6 +12,7 @@ namespace ReviewsSite.Models
         public string Reviewername { get; set; }
         public virtual Product Product { get; set; }
         public int ProductId { get; set; }
+        public DateTime ReviewDate { get; set; }
 
         public Review(int id, int productId, string reviewername, string content)
         {
