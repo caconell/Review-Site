@@ -34,7 +34,7 @@ namespace ReviewsSite.Controllers
 		public IActionResult Create(Product model)
 		{
 			productRepo.Create(model);
-			return RedirectToAction("Update", new { id = model.Id });
+			return RedirectToAction("Details", new { id = model.Id });
 		}
 
 		public IActionResult Update(int id)
@@ -54,7 +54,23 @@ namespace ReviewsSite.Controllers
         {
 			return View(productRepo.GetByID(id));
         }
+		
+		
+		public IActionResult Delete(int id)
+        
+		{
+            Product product = productRepo.GetByID(id);
+            return View(product);
+        }
 
+        [HttpPost]
+        public IActionResult Delete(Product obj)
+        {
+            //Course course = courseRepo.GetByID(obj.Id);
+            productRepo.Delete(obj);
+
+            return RedirectToAction("Index");
+        }
 
 
 

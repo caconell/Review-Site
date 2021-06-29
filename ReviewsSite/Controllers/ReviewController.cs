@@ -53,6 +53,7 @@ namespace ReviewsSite.Controllers
         [HttpPost]
         public IActionResult Update(Review review)
         {
+            review.ReviewDate = DateTime.Now;
             reviewRepo.Update(review);
             ViewBag.ResultMessage = "Review Updated.";
             return RedirectToAction("Details", new { id = review.Id });
