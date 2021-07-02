@@ -10,7 +10,7 @@
 <h4><strong>Reviewer Name:</strong> @Model.Reviewername</h4>
 <hr />
 <h4><strong>Review:</strong> @Model.Content</h4>
-<a href="/Review/Update/@Model.Id"><button>Edit Review</button></a>
-<a href="/Review/Delete/@Model.Id"><button>Delete Review</button></a>
+<button onclick="location.href='/Review/Update/@Model.Id'">Edit Review</button>
+<button onclick="location.href='/Review/Delete/@Model.Id'">Delete Review</button>
 
 
