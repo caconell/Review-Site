@@ -1,0 +1,16 @@
+﻿@model ReviewsSite.Models.Review
+@{
+    ViewBag.Title = "Review Details - " + Model.Reviewername;
+}
+
+<h1>Review Details</h1>
+<hr />
+<h4><strong>Review Date:</strong> @Model.ReviewDate</h4>
+<h4><strong>Product:</strong> <a href="/Product/Details/@Model.Product.Id">@Model.Product.Name</a></h4>
+<h4><strong>Reviewer Name:</strong> @Model.Reviewername</h4>
+<hr />
+<h4><strong>Review:</strong> @Model.Content</h4>
+<a href="/Review/Update/@Model.Id"><button>Edit Review</button></a>
+<a href="/Review/Delete/@Model.Id"><button>Delete Review</button></a>
+
+

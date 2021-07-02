@@ -1,0 +1,15 @@
+﻿@model IEnumerable<ReviewsSite.Models.Review>
+
+@{
+    ViewBag.Title = "Review List"; }
+
+
+
+<h1>Reviews List</h1>
+<hr />
+<ul>
+    @foreach (var review in Model)
+    {
+    <li>@review.Product.Name: <a href="/Review/Details/@review.Id">@review.Content</a></li>
+    }
+</ul>
