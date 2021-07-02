@@ -1,13 +1,11 @@
-﻿body {
-    margin: 0;
-}
-
+﻿
 .header {
     font-size: 72px;
     background: -webkit-linear-gradient(#fff, #009941);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
+    margin-top:0;
 }
 .page-top {
     background-color: #009941;
