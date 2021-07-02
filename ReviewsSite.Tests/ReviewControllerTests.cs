@@ -1,28 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using ReviewsSite.Controllers;
 using ReviewsSite.Models;
 using ReviewsSite.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace ReviewsSite.Tests
 {
-    public class ProductControllerTests
+    public class ReviewControllerTests
     {
 
-        ProductController sut;
-        IRepository<Product> productRepo;
-
-        public ProductControllerTests()
+        ReviewController sut;
+        IRepository<Review> reviewRepo;
+    
+        public ReviewControllerTests()
         {
-            productRepo = Substitute.For<IRepository<Product>>();
-            sut = new ProductController(productRepo);
+            reviewRepo = Substitute.For<IRepository<Review>>();
+            sut = new ReviewController(reviewRepo);
 
         }
 
-        public static implicit operator ProductControllerTests(ProductController v)
+        public static implicit operator ReviewControllerTests(ReviewController v)
         {
             throw new NotImplementedException();
         }
@@ -56,7 +59,7 @@ namespace ReviewsSite.Tests
         public void Create_Returns_A_View()
         {
             // Arrange
-            var result = sut.Create();
+            var result = sut.Create(2);
             //Act
 
             //Assert
@@ -67,22 +70,22 @@ namespace ReviewsSite.Tests
         public void Index_Model_Is_A_List_Of_Reviews()
         {
             // Arrange
-            var expectedReviews = new List<Product>();
-            productRepo.GetAll().Returns(expectedReviews);
+            var expectedReviews = new List<Review>();
+            reviewRepo.GetAll().Returns(expectedReviews);
 
             //Act
             var result = sut.Index();
 
             //Assert
-            Assert.IsType<List<Product>>(result.Model);
+            Assert.IsType<List<Review>>(result.Model);
         }
 
         [Fact]
         public void Index_Passes_A_List_Of_Reviews_To_View()
         {
             // Arrange
-            var expectedReviews = new List<Product>();
-            productRepo.GetAll().Returns(expectedReviews);
+            var expectedReviews = new List<Review>();
+            reviewRepo.GetAll().Returns(expectedReviews);
 
             //Act
             var result = sut.Index();

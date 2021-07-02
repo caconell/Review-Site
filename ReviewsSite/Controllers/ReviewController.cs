@@ -38,8 +38,9 @@ namespace ReviewsSite.Controllers
 
         public ActionResult Create(Review review)
         {
+            review.ReviewDate = DateTime.Now;
             reviewRepo.Create(review);
-            return RedirectToAction("Update", new { id = review.Id });
+            return RedirectToAction("Details", new { id = review.Id });
 
         }
 
@@ -52,9 +53,11 @@ namespace ReviewsSite.Controllers
         [HttpPost]
         public IActionResult Update(Review review)
         {
+            review.ReviewDate = DateTime.Now;
             reviewRepo.Update(review);
             ViewBag.ResultMessage = "Review Updated.";
-            return View(review);
+            return RedirectToAction("Details", new { id = review.Id });
+            //return View(review);
         }
 
         public IActionResult Delete(int id)

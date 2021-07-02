@@ -10,6 +10,6 @@
 <ul>
     @foreach (var review in Model)
     {
-        <li><a href="/Review/Details/@review.Id">@review.Content</a></li>
+    <li>@review.Product.Name: <a href="/Review/Details/@review.Id">@review.Content</a></li>
     }
 </ul>
